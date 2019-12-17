@@ -49,17 +49,19 @@ To begin, get your puzzle input.
 """
 from typing import List
 from pathlib import Path
+from copy import deepcopy
 
 
 VALID_OPCODES = (1, 2, 99)
 
 
 def intcode(integers: List[int]) -> List[int]:
-    res = integers
+    """Basic Intcode program."""
+    res = deepcopy(integers)
     for cursor in range(0, len(integers) - 1, 4):
         opcode, in_1, in_2, out = integers[cursor : cursor + 4]
         if opcode not in VALID_OPCODES:
-            raise ValueError("Something went wrong!")
+            raise ValueError(f"Got opcode {opcode}, something went wrong!")
         elif opcode == 99:
             return res  # finished, halt
         elif opcode == 2:
