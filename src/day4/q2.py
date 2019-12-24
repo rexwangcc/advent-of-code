@@ -20,6 +20,7 @@ def is_valid_2(password: int) -> bool:
     mymap = Counter(str(password))
     return 2 in list(mymap.values())
 
+
 def main():
     answer_pool = set([])
     # rule 1 & 2: 6-digit within range
@@ -28,8 +29,10 @@ def main():
             answer_pool.add(i)
     answer_pool2 = set([])
     for i in answer_pool:
-        if is_valid_2(i): answer_pool2.add(i)
+        if is_valid_2(i):
+            answer_pool2.add(i)
     print(f"Answer is {len(answer_pool2)}")
+
 
 if __name__ == "__main__":
     main()

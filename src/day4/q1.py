@@ -11,6 +11,7 @@ def is_valid(password: int) -> bool:
         candidate = int(str_pwd[i])
     return same_adjacent
 
+
 def main():
     answer_pool = set([])
     # rule 1 & 2: 6-digit within range
@@ -18,6 +19,7 @@ def main():
         if is_valid(i):
             answer_pool.add(i)
     print(f"Answer is {len(answer_pool)}")
+
 
 if __name__ == "__main__":
     main()

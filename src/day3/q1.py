@@ -103,7 +103,7 @@ def plot_wire(wire: List[int]) -> Dict[Tuple[int, int], int]:
                 wire_step += 1
         ori = dest
     return mymap
-        
+
 
 def manhattan_distance(
     destination: Tuple[int, int], origin: Tuple[int, int] = (0, 0)
@@ -119,7 +119,7 @@ if __name__ == "__main__":
         wires = fp.read().splitlines()
     wire_1 = wires[0].split(",")
     wire_2 = wires[1].split(",")
-    
+
     nodes_on_wire1 = plot_wire(wire_1)
     nodes_on_wire2 = plot_wire(wire_2)
 
