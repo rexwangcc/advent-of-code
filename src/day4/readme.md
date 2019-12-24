@@ -1,0 +1,1 @@
+There could be better ways to solve this problem. Compute the diff between digits from end to start could drop/skip scanning thousands of integers than brute-force way. Bit-manipulation might help. Theoretically regex could also work. Need to come back later.
