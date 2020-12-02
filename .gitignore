@@ -2,5 +2,10 @@
 __pycache__/
 *.pyc
 
+# Clojure
+.nrepl-port
+.cpcache/
+.calva/
+
 # OS
 .DS_Store
