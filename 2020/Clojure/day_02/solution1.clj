@@ -3,7 +3,7 @@
 
 
 (defn get-lines
-  "Read in inputs as seq of integers."
+  "Read in and parse inputs as seq of vectors."
   [file]
   (letfn [(destruct
            [line]
