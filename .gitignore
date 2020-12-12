@@ -6,6 +6,10 @@ __pycache__/
 .nrepl-port
 .cpcache/
 .calva/
+Clojure.iml
 
 # OS
 .DS_Store
+
+# IDEs
+.idea/
