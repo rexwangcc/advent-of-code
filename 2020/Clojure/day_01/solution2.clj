@@ -1,4 +1,4 @@
-(ns solution2
+(ns day_01.solution2
   (:require [clojure.string :as str]))
 
 (defn two-sum

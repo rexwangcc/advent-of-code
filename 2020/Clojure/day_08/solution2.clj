@@ -1,4 +1,4 @@
-(ns solution2
+(ns day_08.solution2
   (:require [clojure.string :as str]))
 
 (defn get-lines
