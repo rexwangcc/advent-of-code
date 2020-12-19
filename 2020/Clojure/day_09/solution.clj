@@ -1,5 +1,8 @@
-(ns day_09.solution2
-  (:require [clojure.string :as str]))
+(ns day_09.solution
+  (:require [clojure.string :as str]
+            [main :as main :refer [defoverload]]))
+
+(def day "09")
 
 (defn get-lines
   "Read in inputs as seq of integers."
@@ -14,7 +17,6 @@
       (if (seen (- target curr))
         true
         (recur (rest l) (conj seen curr))))))
-
 
 (defn slide
   "Slide through the list using a window and
@@ -54,8 +56,17 @@
             (recur left (inc right))
             (recur (inc left) right)))))))
 
-(comment
+(defn part1
+  [_]
+  (let [inputs (get-lines "day_09/inputs.txt")]
+    (slide inputs)))
+
+(defn part2
+  [_]
   (let [inputs (get-lines "day_09/inputs.txt")
         magical-number (->> inputs
                             slide)]
     (find-contiguous-set inputs magical-number)))
+
+(defoverload main/part1 day part1)
+(defoverload main/part2 day part2)

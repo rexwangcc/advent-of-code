@@ -1,10 +1,16 @@
-(ns solution1
-  (:require [clojure.string :as str]))
+(ns day_10.solution
+  (:require [clojure.string :as str]
+            [main :as main :refer [defoverload]]))
+
+(def day "10")
 
 (defn get-lines
-  "Read in inputs as seq of integers."
+  "Read in and parse inputs as seq of integers."
   [file]
-  (map read-string (str/split-lines (slurp file))))
+  (->> file
+       slurp
+       str/split-lines
+       (map read-string)))
 
 (defn calculate-jolt-diff
   "Naive sliding window over a sorted chain. Could be replaced by `reduce`."
@@ -23,6 +29,14 @@
             (recur (rest chain) (inc one-jolt-diff) three-jolt-diff)
             (recur (rest chain) one-jolt-diff (inc three-jolt-diff))))))))
 
-(comment
+(defn part1
+  [_]
   (let [inputs (get-lines "day_10/inputs.txt")]
     (calculate-jolt-diff inputs)))
+
+(defn part2
+  [_]
+  nil)
+
+(defoverload main/part1 day part1)
+(defoverload main/part2 day part2)
