@@ -1,0 +1,3 @@
+{:deps {}
+ :paths ["../Clojure" "classes"]
+ :aliases {:run {:main-opts   ["-m" "main"]}}}
